@@ -1,0 +1,14 @@
+[[main]]
+name = 'Publicaciones'
+pageRef = '/p'
+weight = 20
+
+[[main]]
+name = 'Proyectos'
+pageRef = '/prj'
+weight = 30
+
+[[main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30

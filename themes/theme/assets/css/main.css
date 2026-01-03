@@ -1,0 +1,174 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+
+:root {
+  --default-fonts: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-bg-hover: rgba(255, 255, 255, 0.04);
+
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-family: var(--default-fonts);
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, var(--default-fonts);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #e3e3e3;
+  background-color: #272e33;
+}
+
+
+
+body > main {
+  flex-grow: 1;
+  width: 92%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-bg-hover);
+  border-top: 1px solid var(--color-bg-hover);
+  line-height: 1.4rem;
+}
+
+body > main > *,
+body > main > section > * {
+  margin-bottom: 1.5rem;
+}
+
+body > footer, body > header {
+  display: flex;
+  justify-content: space-between;
+  width: 92%;
+  max-width: 48rem;
+  margin: 0 auto;
+  gap: 5rem;
+}
+
+body > footer {
+  justify-content: center;
+  margin: 1.4rem auto;
+}
+
+body > header h1 {
+  font-size: 2rem;
+  padding: 1.2rem 0;
+}
+
+nav {
+  padding: 2rem 0;
+  overflow-x: scroll;
+}
+
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+* {
+  scrollbar-color: var(--color-bg-hover) transparent;
+}
+
+a {
+  color: #35aac9;
+  text-decoration: none;
+}
+
+pre {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', 'Courier New', monospace;
+  border-radius: 0.4rem;
+  background-color: var(--color-bg-hover);
+  padding: 1rem;
+  overflow-x: scroll;
+}
+
+code:not(pre code) {
+  background-color: var(--color-bg-hover);
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.4rem;
+}
+
+hr {
+  color: var(--color-bg-hover);
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+h2 {
+  font-size: 1.8em;
+  line-height: 1.15em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.1em;
+}
+
+h4, h5, h6 {
+  font-weight: bold;
+}
+
+section {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
