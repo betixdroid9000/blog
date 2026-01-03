@@ -5,6 +5,7 @@
     <span style="display:flex;justify-content:flex-end;width:100%;">
       <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
     </span>
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     <h1>{{ .Title }}</h1>
     <span>
     {{ with .Params.Author }}{{ . }} • {{ end }}{{ .ReadingTime }}min{{ if (ne .ReadingTime 1) }}s{{ end }}
@@ -12,5 +13,7 @@
   </header>
 
   {{ .Content }}
+  <hr/>
+  <span>Tags:</span>
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

@@ -1,7 +1,13 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
+  <div style="display:flex;flex-wrap:1;gap:1rem;">
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <code>
+      <span>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      </span>
+    </code>
   {{ end }}
+  </div>
 {{ end }}

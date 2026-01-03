@@ -1,9 +1,13 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <div>
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    <h1>{{ .Title }}</h1>
+  </div>
   {{ .Content }}
   {{ range .Pages }}
     <section>
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
       {{ .Summary }}
     </section>
   {{ end }}

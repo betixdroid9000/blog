@@ -2,6 +2,7 @@
   {{ .Content }}
   {{ range site.RegularPages }}
     <section>
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
       <h2><a href="{{ .RelPermalink }}">{{ .CurrentSection.Title }} | {{ .LinkTitle }}</a></h2>
       {{ .Summary }}
     </section>

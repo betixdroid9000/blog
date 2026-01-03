@@ -2,6 +2,7 @@
 date = '2026-01-02T15:20:57-06:00'
 title = 'Estructura y cache'
 author = 'Gustavo Calvo'
+tags = ['dev', 'golang']
 +++
 
 Creamos un proyecto con la siguiente estructura:

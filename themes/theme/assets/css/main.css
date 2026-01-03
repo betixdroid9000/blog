@@ -50,16 +50,21 @@ table {
 /* http://meyerweb.com/eric/tools/css/reset/ */
 
 :root {
-  --default-fonts: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --color-bg-hover: rgba(255, 255, 255, 0.04);
+  --f-def: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --c-fg: #e3e3e3;
+  --c-fg-sec: rgba(255, 255, 255, 0.5);
+  --c-fg-mut: rgba(255, 255, 255, 0.12);
+  --c-bg: #272e33;
+  --c-bg-hov: rgba(255, 255, 255, 0.04);
+  --c-bg-con: rgba(0, 0, 0, 0.2);
 
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-  font-family: var(--default-fonts);
+  font-family: var(--f-def);
 }
 
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: InterVariable, var(--default-fonts);
+    font-family: InterVariable, var(--f-def);
   }
 }
 
@@ -67,35 +72,39 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: #e3e3e3;
-  background-color: #272e33;
+  color: var(--c-fg);
+  background-color: var(--c-bg);
 }
 
-
-
-body > main {
+main {
   flex-grow: 1;
   width: 92%;
   max-width: 48rem;
   margin: 0 auto;
   padding: 2rem 0;
-  border-bottom: 1px solid var(--color-bg-hover);
-  border-top: 1px solid var(--color-bg-hover);
+  border-bottom: 1px solid var(--c-bg-hov);
+  border-top: 1px solid var(--c-bg-hov);
   line-height: 1.4rem;
 }
 
-body > main > *,
-body > main > section > * {
+main > *,
+main > section > * {
   margin-bottom: 1.5rem;
+}
+
+main > header time {
+  color: var(--c-fg-sec);
 }
 
 body > footer, body > header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 92%;
   max-width: 48rem;
   margin: 0 auto;
-  gap: 5rem;
+  gap: 0 4rem;
+  color: var(--c-fg-sec);
 }
 
 body > footer {
@@ -117,11 +126,26 @@ nav > ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 0.4rem;
+}
+
+nav > ul > li a {
+  color: inherit;
+  padding: 0.6rem;
+}
+
+nav > ul > li a.active {
+  border-radius: 0.4rem;
+  background-color: var(--c-bg-hov);
+}
+
+nav > ul > li a:hover {
+  border-radius: 0.4rem;
+  background-color: var(--c-bg-hov);
 }
 
 * {
-  scrollbar-color: var(--color-bg-hover) transparent;
+  scrollbar-color: var(--c-fg-sec) transparent;
 }
 
 a {
@@ -129,22 +153,24 @@ a {
   text-decoration: none;
 }
 
-pre {
+pre, code:not(pre code) {
   font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', 'Courier New', monospace;
+  border: 1px solid var(--c-fg-mut);
   border-radius: 0.4rem;
-  background-color: var(--color-bg-hover);
-  padding: 1rem;
-  overflow-x: scroll;
+  background-color: var(--c-bg-hov);
+  padding: 0 0.4rem;
 }
 
-code:not(pre code) {
-  background-color: var(--color-bg-hover);
-  border-radius: 0.4rem;
-  padding: 0.1rem 0.4rem;
+pre {
+  padding: 0.5rem 0.6rem;
+  overflow-x: scroll;
+  font-size:0.94rem;
 }
 
 hr {
-  color: var(--color-bg-hover);
+  border: none;
+  height: 1px;
+  background-color: var(--c-fg-mut);
 }
 
 h1 {
@@ -167,8 +193,8 @@ h4, h5, h6 {
 }
 
 section {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--c-fg-mut);
+  background-color: var(--c-bg-con);
   border-radius: 0.4rem;
-  padding: 1rem;
+  padding: 0.4rem 1rem;
 }
